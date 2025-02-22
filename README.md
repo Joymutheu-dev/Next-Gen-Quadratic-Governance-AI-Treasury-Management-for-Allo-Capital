@@ -35,27 +35,27 @@ Ensure you have:
 git clone https://github.com/your-username/Allo-Capital-Allocator.git
 cd Allo-Capital-Allocator
 
-3️⃣ Install Dependencies
-
+### **3️⃣ Install Dependencies**
+```bash
 npm install
 
-4️⃣ Configure Environment
-
+### **4️⃣ Configure Environment**
+```bash
 Create a .env file and add:
 
 ALCHEMY_API_KEY=your_alchemy_key
 PRIVATE_KEY=your_wallet_private_key
 
-5️⃣ Compile Contracts
-
+### **5️⃣ Compile Contracts**
+```bash
 npx hardhat compile
 
-6️⃣ Deploy to Ethereum Testnet (Sepolia)
-
+### **6️⃣ Deploy to Ethereum Testnet** (Sepolia)
+```bash
 npx hardhat run scripts/deploy.js --network sepolia
 
-7️⃣ Verify Smart Contracts
-
+### **7️⃣ Verify Smart Contracts**
+```bash
 npx hardhat verify --network sepolia deployed_contract_address
 
 ---
