@@ -34,7 +34,7 @@ Allo-Capital-Allocator introduces **quadratic voting**, **AI-powered treasury op
 
 # 2️⃣ Clone Repository
 # Click the link below to access the repository:
-👉 **[GitHub Repository](https://github.com/Joymutheu-dev/Allo-Capital-Allocator)**  
+👉 **https://github.com/Joymutheu-dev/Next-Gen-Quadratic-Governance-AI-Treasury-Management-for-Allo-Capital** 
 
 # 3️⃣ Install Dependencies
 npm install
