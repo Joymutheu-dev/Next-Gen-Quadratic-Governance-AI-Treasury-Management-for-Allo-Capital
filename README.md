@@ -1,6 +1,6 @@
 
 ## Overview  
-Introducing Allo-Capital-Allocato, a decentralized capital allocation mechanism developed for Allo Capital  leveraging **quadratic voting, AI-driven treasury optimization, and zero-knowledge sybil resistance**. This project ensures **fair, transparent, and intelligent** funding distribution for DAOs, researchers, and builders.  
+Introducing Allo-Capital-Allocator, a decentralized capital allocation mechanism developed for Allo Capital  leveraging **quadratic voting, AI-driven treasury optimization, and zero-knowledge sybil resistance**. This proposed model will ensure **fair, transparent, and intelligent** funding distribution for Allo Capital, researchers, and builders.  
 
 📄 **Proposal Document**: [A Novel AI-Augmented Framework for Quadratic Governance and Resource Allocation](https://research.allo.capital/t/a-novel-ai-augmented-framework-for-quadratic-governance-and-resource-allocation/182?u=joymutheu)  
 
