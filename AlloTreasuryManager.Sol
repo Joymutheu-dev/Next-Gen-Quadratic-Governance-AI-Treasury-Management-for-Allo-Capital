@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+
+contract AlloTreasuryManager is Ownable {
+    using SafeMath for uint256;
+
+    uint256 public totalFunds;
+    mapping(address => uint256) public allocations;
+
+    event FundsAdded(address indexed sender, uint256 amount);
+    event FundsDistributed(address indexed recipient, uint256 amount);
+
+    function depositFunds() external payable {
+        require(msg.value > 0, "Must deposit positive amount");
+        totalFunds = totalFunds.add(msg.value);
+        emit FundsAdded(msg.sender, msg.value);
+    }
+
+    function allocateFunds(address recipient, uint256 amount) external onlyOwner {
+        require(amount <= totalFunds, "Insufficient funds");
+        allocations[recipient] = allocations[recipient].add(amount);
+        totalFunds = totalFunds.sub(amount);
+        emit FundsDistributed(recipient, amount);
+    }
+
+    function withdrawAllocatedFunds() external {
+        uint256 amount = allocations[msg.sender];
+        require(amount > 0, "No funds allocated");
+
+        allocations[msg.sender] = 0;
+        payable(msg.sender).transfer(amount);
+    }
+}
