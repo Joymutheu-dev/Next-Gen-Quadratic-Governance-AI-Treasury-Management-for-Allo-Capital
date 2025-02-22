@@ -1,0 +1,60 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+
+contract AlloCapitalVoting is Ownable {
+    using SafeMath for uint256;
+
+    struct Proposal {
+        uint256 id;
+        string description;
+        uint256 votes;
+        bool executed;
+    }
+
+    Proposal[] public proposals;
+    mapping(address => uint256) public votingPower;
+    mapping(uint256 => mapping(address => uint256)) public votes;
+
+    event ProposalCreated(uint256 id, string description);
+    event Voted(address indexed voter, uint256 proposalId, uint256 votes);
+    event ProposalExecuted(uint256 id);
+
+    function createProposal(string memory _description) external onlyOwner {
+        proposals.push(Proposal({
+            id: proposals.length,
+            description: _description,
+            votes: 0,
+            executed: false
+        }));
+        emit ProposalCreated(proposals.length - 1, _description);
+    }
+
+    function quadraticVote(uint256 proposalId, uint256 voteAmount) external {
+        require(proposalId < proposals.length, "Invalid proposal");
+        require(voteAmount > 0, "Must vote with nonzero amount");
+
+        uint256 cost = voteAmount.mul(voteAmount);
+        require(votingPower[msg.sender] >= cost, "Insufficient voting power");
+
+        votingPower[msg.sender] = votingPower[msg.sender].sub(cost);
+        proposals[proposalId].votes = proposals[proposalId].votes.add(voteAmount);
+        votes[proposalId][msg.sender] = votes[proposalId][msg.sender].add(voteAmount);
+
+        emit Voted(msg.sender, proposalId, voteAmount);
+    }
+
+    function allocateVotingPower(address voter, uint256 amount) external onlyOwner {
+        votingPower[voter] = votingPower[voter].add(amount);
+    }
+
+    function executeProposal(uint256 proposalId) external onlyOwner {
+        require(proposalId < proposals.length, "Invalid proposal");
+        require(!proposals[proposalId].executed, "Already executed");
+
+        proposals[proposalId].executed = true;
+        emit ProposalExecuted(proposalId);
+    }
+}
