@@ -2,16 +2,16 @@
 [A Novel AI-Augmented Framework for Quadratic Governance and Resource Allocation](https://research.allo.capital/t/a-novel-ai-augmented-framework-for-quadratic-governance-and-resource-allocation/182?u=joymutheu)  
 
 ## **🔹 Overview**  
-Allo-Capital-Allocator introduces **quadratic voting**, **AI-powered treasury optimization**, and **zero-knowledge Sybil resistance** to create a **fair, transparent, and intelligent capital allocation** system.  
+This AI-powered agent has been designed to integrate with AlloOS, optimizing and automating capital allocation using machine learning and blockchain smart contracts. The agent provides:
 
-### **✨ Key Features**  
-✅ **Quadratic Voting (QV)** – Weighted voting to prevent plutocracy.  
-✅ **AI-Treasury Optimization** – Adaptive capital allocation using Monte Carlo simulations.  
-✅ **Zero-Knowledge Sybil Resistance** – Identity verification without compromising privacy.  
-✅ **Intellectual Capital Staking** – Tokenizing knowledge contributions to reward research.  
-✅ **Decentralized Reputation System** – AI-calculated influence scores to prevent governance manipulation.  
+✓AI-driven funding recommendations based on historical data and impact analysis.
 
----
+✓Governance-weighted allocation models to enhance decision-making.
+
+✓Automated capital deployment through smart contract integration. 
+
+Other features include **quadratic voting**, **AI-powered treasury optimization**, and **zero-knowledge Sybil resistance** to create a **fair, transparent, and intelligent capital allocation** system.  
+
 
 ## **🛠️ Smart Contract Architecture**  
 | Contract | Description |  
